@@ -1,0 +1,112 @@
+{% load static %}  
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Art Record Edits</title>  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{seller.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller Id:</label>  
+    <div class="col-sm-4">  
+        <input type="number" name="sid" id="id_sid" required maxlength="20" value="{{ seller.sid }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller First Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="sfname" id="id_sfname" required maxlength="100" value="{{ seller.sfname }}" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller Last Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="slname" id="id_slname" required maxlength="100" value="{{ seller.slname }}" />  
+    </div>  
+  </div>   
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller Email:</label>  
+    <div class="col-sm-4">  
+        <input type="email" name="semail" id="id_semail" required maxlength="254" value="{{ seller.semail }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller Address:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="saddress" id="id_saddress" required maxlength="15" value="{{ seller.saddress }}" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Seller Gender:</label>  
+    <div class="col-sm-4">  
+      <input type="radio" id="Male" name="sgender" value="Male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="Female" name="sgender" value="Female">
+      <label for="female">Female</label><br>
+      <input type="radio" id="Others" name="sgender" value="Others">
+      <label for="other">Other</label> 
+    </div>  
+  </div>
+  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Painting Category:</label>  
+    <div class="col-sm-4">  
+      <select name="scategory" id="scategory">
+        <option value="Contemporary">Contemporary</option>
+        <option value="Pop">Pop</option>
+        <option value="Impressionism">Impressionism</option>
+        <option value="Surrealism">Surrealism</option>
+      </select>  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Bidding Price (in Lakhs):</label>  
+    <div class="col-sm-4">  
+        <input type="number" name="sbid" id="id_sbid" required maxlength="15" value="{{ seller.sbid }}" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Agree with Terms & Conditions?:</label>  
+    <div class="col-sm-4">  
+        <input type="checkbox" name="tnc" id="id_tnc" required maxlength="15" value="True" default="False" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Date of Bidding Submission:</label>  
+    <div class="col-sm-4">  
+        <input type="date" name="sdate" id="id_sdate" required maxlength="15" value="" />  
+    </div>  
+  </div>        
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body> 
+ 
+</html>  
